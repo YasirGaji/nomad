@@ -56,6 +56,10 @@ def list_docs() -> list[str]:
     "docs://documents/{doc_id}",
     mime_type="text/plain"
 )
+def fetch_doc(doc_id: str) -> str:
+    if doc_id not in docs:
+        return f"Document with ID '{doc_id}' not found."
+    return docs[doc_id]
 
 # TODO: Write a prompt to rewrite a doc in markdown format
 # TODO: Write a prompt to summarize a doc
